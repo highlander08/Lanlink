@@ -4,7 +4,7 @@ services:
   app:
     build: .
     entrypoint: ./.docker/entrypoint.sh
-    container_name: esquenta-4-app
+    container_name: expensescontrol
     environment:
       - CHOKIDAR_USEPOLLING=true
     ports:
@@ -14,7 +14,7 @@ services:
 
   db:
     build: ./.docker/mysql
-    container_name: controle
+    container_name: expensescontrol
     restart: always
     tty: true
     ports:
@@ -22,6 +22,6 @@ services:
     volumes:
       - ./.docker/dbdata:/var/lib/mysql
     environment:
-      - MYSQL_DATABASE=controle
+      - MYSQL_DATABASE=expensescontrol
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_USER=root
