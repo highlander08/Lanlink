@@ -60,6 +60,7 @@ export class UserController {
     this.userRepo.update({ id: +id }, body);
     return this.userRepo.findOneOrFail(+id);
   }
+  //deletar
   @Delete(':id')
   @HttpCode(204)
   async destroy(@Param('id') id: string): Promise<void> {
