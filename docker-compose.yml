@@ -4,7 +4,7 @@ services:
   app:
     build: .
     entrypoint: ./.docker/entrypoint.sh
-    container_name: expensescontrol
+    container_name: Expensescontrol
     environment:
       - CHOKIDAR_USEPOLLING=true
     ports:
@@ -14,7 +14,7 @@ services:
 
   db:
     build: ./.docker/mysql
-    container_name: expensescontrol
+    container_name: Expensescontrol
     restart: always
     tty: true
     ports:
